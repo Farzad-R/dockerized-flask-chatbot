@@ -4,7 +4,9 @@ This repository contains a Flask chatbot application that utilizes the DialoGPT 
 
 ![Chatbot Screenshot](docs/webdemo.png)
 
-Background image from: [D5000](https://pixabay.com/users/d5000-16677078/)
+- Background image from [D5000](https://pixabay.com/users/d5000-16677078/).
+- [paper Link](https://arxiv.org/abs/1911.00536).
+- [Huggingface Link](https://huggingface.co/docs/transformers/model_doc/dialogpt).
 
 ## Features
 
