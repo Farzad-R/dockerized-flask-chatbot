@@ -2,7 +2,7 @@
 
 This repository contains a Flask chatbot application that utilizes the DialoGPT language model by Microsoft. The chatbot can generate responses based on user prompts and offers an interactive conversation experience.
 
-![Chatbot Screenshot](docs/demo.png)
+![Chatbot Screenshot](docs/webdemo.png)
 
 ## Features
 
