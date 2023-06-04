@@ -26,7 +26,7 @@ git clone https://github.com/Farzad-R/dockerized-flask-chatbot.git
 2. Navigate to the project directory:
 
 ```
-cd flask-chatbot-docker
+cd dockerized-flask-chatbot
 ```
 
 3. Create a virtual environment:
@@ -40,18 +40,28 @@ source env/bin/activate
 ```
 pip install -r requirements.txt
 ```
+### Running on the terminal
 
-5. Build the Docker image:
+5. Open terminal and run:
+```
+python app.py
+```
+
+Open your web browser and visit `http://127.0.0.1:5000/` to access the chatbot interface.
+
+### Running on a docker container
+
+6. Build the Docker image:
 ```
 docker build -t flask-chatbot .
 ```
 
-6. Run the Docker container:
+7. Run the Docker container:
 ```
 docker run -p 5000:5000 flask-chatbot
 ```
 
-7. Open your web browser and visit `http://localhost:5000` to access the chatbot interface.
+Open your web browser and visit `http://127.0.0.1:5000/` to access the chatbot interface.
 
 ## Configuration
 You can customize the chatbot behavior by modifying the parameters in the generate_response() function in the app.py file. Adjust the max_length, temperature, top_k, and num_return_sequences parameters to fine-tune the response generation process.
