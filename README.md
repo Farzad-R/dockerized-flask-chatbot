@@ -20,7 +20,7 @@ This repository contains a Flask chatbot application that utilizes the DialoGPT 
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/flask-chatbot-docker.git
+git clone https://github.com/Farzad-R/dockerized-flask-chatbot.git
 ```
 
 2. Navigate to the project directory:
