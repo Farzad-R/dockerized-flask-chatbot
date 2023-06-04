@@ -4,6 +4,8 @@ This repository contains a Flask chatbot application that utilizes the DialoGPT 
 
 ![Chatbot Screenshot](docs/webdemo.png)
 
+Background image from: [D5000](https://pixabay.com/users/d5000-16677078/)
+
 ## Features
 
 - Generate responses using the DialoGPT language model
