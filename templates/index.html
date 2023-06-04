@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DialoGPT-medium</title>
+  <style>
+    /* CSS styles for the page layout */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url('/static/backgr4.jpg');
+      background-size: 1920px 1080px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* CSS styles for the heading */
+    h1 {
+      text-align: center;
+      color: #ffffff;
+    }
+
+    /* CSS styles for the chat container */
+    #chat-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* CSS styles for the user input textarea */
+    #user-input {
+      width: 45%;
+      height: 300px;
+      border: none;
+      /* Remove border */
+      border-radius: 4px;
+      padding: 10px;
+      resize: scroll;
+      background-color: rgba(255, 255, 255, 0.5);
+      /* Set background color with transparency */
+      color: #ffffff;
+      /* Set text color to white */
+    }
+
+    /* CSS styles for the bot response textarea */
+    #bot-response {
+      width: 45%;
+      height: 300px;
+      border: none;
+      /* Remove border */
+      border-radius: 4px;
+      padding: 10px;
+      overflow-y: scroll;
+      background-color: rgba(255, 255, 255, 0.5);
+      /* Set background color with transparency */
+      color: #ffffff;
+      /* Set text color to white */
+    }
+
+    /* CSS styles for individual bot response paragraphs */
+    #bot-response p {
+      margin: 10px 0;
+    }
+
+    /* CSS styles for the submit button */
+    #submit-btn {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>DialoGPT-medium Chatbot</h1>
+  <div id="chat-container">
+    <textarea id="user-input" placeholder="Type your message here"></textarea>
+    <div id="bot-response"></div>
+  </div>
+  <button id="submit-btn" onclick="sendUserInput()">Send</button>
+
+  <script>
+    // JavaScript function to send user input to the server
+    function sendUserInput() {
+      var userInput = document.getElementById("user-input").value;
+      document.getElementById("user-input").value = "";
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/chat", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          var botResponse = document.createElement("p");
+          botResponse.innerHTML = "<strong>Bot:</strong> " + xhr.responseText;
+          document.getElementById("bot-response").appendChild(botResponse);
+          document.getElementById("bot-response").scrollTop = document.getElementById("bot-response").scrollHeight;
+        }
+      };
+      xhr.send("user_input=" + encodeURIComponent(userInput));
+    }
+  </script>
+</body>
+
+</html>
